@@ -1,19 +1,18 @@
 import React from 'react';
 import Footer from 'components/Footer';
-import Navbar from 'components/Navbar';
+import Layout from 'components/Layout';
 import Newsletter from 'components/Newsletter';
 import ResourceHighlight from 'components/ResourceHighlight';
 import ResourceList from 'components/ResourceList';
 
 const Home = () => {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <ResourceHighlight />
       <Newsletter />
       <ResourceList />
       <Footer />
-    </>
+    </Layout>
   );
 };
 
