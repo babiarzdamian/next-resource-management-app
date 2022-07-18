@@ -5,9 +5,7 @@ import Newsletter from 'components/Newsletter';
 import ResourceHighlight from 'components/ResourceHighlight';
 import ResourceList from 'components/ResourceList';
 
-import { resources } from 'api/data';
-
-const Home = () => {
+const Home = ({ resources }) => {
   return (
     <Layout>
       <ResourceHighlight resources={resources.slice(0, 1)} />
@@ -17,5 +15,16 @@ const Home = () => {
     </Layout>
   );
 };
+
+export async function getStaticProps() {
+  const resData = await fetch('http://localhost:3000/api/resources');
+  const data = await resData.json();
+
+  return {
+    props: {
+      resources: data,
+    },
+  };
+}
 
 export default Home;
