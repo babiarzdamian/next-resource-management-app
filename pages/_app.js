@@ -1,7 +1,9 @@
-import '../styles/globals.css'
+import React from 'react';
+import 'bulma/css/bulma.min.css';
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MainApp = ({ Component, pageProps }) => {
+  return <Component {...pageProps} />;
+};
 
-export default MyApp
+export default MainApp;
