@@ -10,10 +10,9 @@ import { resources } from 'api/data';
 const Home = () => {
   return (
     <Layout>
-      <ResourceHighlight />
+      <ResourceHighlight resources={resources.slice(0, 1)} />
       <Newsletter />
-      <ResourceList />
-      {JSON.stringify(resources)}
+      <ResourceList resources={resources.slice(1)} />
       <Footer />
     </Layout>
   );
