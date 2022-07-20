@@ -16,8 +16,8 @@ const Home = ({ resources }) => {
   );
 };
 
-export async function getStaticProps() {
-  const resData = await fetch('http://localhost:3000/api/resources');
+export async function getServerSideProps() {
+  const resData = await fetch('http://localhost:3003/resources');
   const data = await resData.json();
 
   return {
