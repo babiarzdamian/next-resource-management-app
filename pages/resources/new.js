@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 import Layout from 'components/Layout';
 
 const DEFAUTL_DATA = {
@@ -12,12 +13,12 @@ const DEFAUTL_DATA = {
 
 const ResourceCratePage = () => {
   const [form, setForm] = useState(DEFAUTL_DATA);
+  const router = useRouter();
+
   const submitForm = () => {
     axios
       .post('/api/resources', form)
-      .then((res) => {
-        alert(res.data);
-      })
+      .then(() => router.push('/'))
       .catch((err) => {
         alert(err.message + '\n' + err?.response?.data);
       });
