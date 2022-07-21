@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Link from 'next/link';
+
 const ResourceList = ({ resources }) => {
   return (
     <section className="hero ">
@@ -17,6 +19,9 @@ const ResourceList = ({ resources }) => {
                       {resource.title}
                     </h1>
                     <p className="has-text-dark">{resource.description}</p>
+                    <Link href={`/resources/${resource.id}`}>
+                      <a className="button is-info is-small">Details</a>
+                    </Link>
                   </div>
                 </div>
               ))}
