@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ResourceForm = ({ onFormSubmit }) => {
+const ResourceForm = ({ initialData, onFormSubmit }) => {
   const DEFAUTL_DATA = {
     title: '',
     description: '',
@@ -9,9 +9,9 @@ const ResourceForm = ({ onFormSubmit }) => {
     timeToFinish: 60,
   };
 
-  const [form, setForm] = useState(DEFAUTL_DATA);
+  const [form, setForm] = useState(initialData || DEFAUTL_DATA);
 
-  const resetForm = () => setForm(DEFAUTL_DATA);
+  const resetForm = () => setForm(initialData || DEFAUTL_DATA);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
