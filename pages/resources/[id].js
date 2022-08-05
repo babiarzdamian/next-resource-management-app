@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Layout from 'components/Layout';
 
 const ResourceDetail = ({ resource }) => {
@@ -26,23 +25,7 @@ const ResourceDetail = ({ resource }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const resData = await fetch('http://localhost:3003/api/resources');
-  const data = await resData.json();
-
-  const paths = data.map((resource) => {
-    return {
-      params: { id: resource.id },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const dataRes = await fetch(
     `http://localhost:3003/api/resources/${params.id}`
   );
