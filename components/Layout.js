@@ -1,10 +1,12 @@
 import React from 'react';
+import ActiveResource from './ActiveResource';
 import Navbar from './Navbar';
 
 const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
+      <ActiveResource />
       {children}
     </>
   );
