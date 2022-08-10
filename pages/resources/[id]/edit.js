@@ -19,7 +19,6 @@ const ResourceEdit = ({ resource }) => {
       <div className="container">
         <div className="columns">
           <div className="column is-8 is-offset-2">
-            <div>ResourceEdit - {resource.title}</div>
             <ResourceForm
               initialData={resource}
               onFormSubmit={updateResource}
